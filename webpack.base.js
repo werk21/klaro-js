@@ -43,7 +43,6 @@ let config = {
     },
     entry: {
         'klaro': path.join(SRC_DIR, 'klaro.js'),
-        'klaro-no-translations': path.join(SRC_DIR, 'klaro-no-translations.js'),
         cm: path.join(SRC_DIR, 'consent-manager.js'),
         translations: path.join(SRC_DIR, 'translations.js'),
         ide: path.join(SRC_DIR, 'ide.js')
@@ -51,7 +50,7 @@ let config = {
     output: {
         path: BUILD_DIR,
         filename: SEPARATE_CSS ? '[name]-no-css.js' : '[name].js',
-        library: 'klaro',
+        library: '[name]',
         libraryTarget: 'umd',
         publicPath: '',
     },
