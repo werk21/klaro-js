@@ -43,7 +43,7 @@ let config = {
     },
     entry: {
         'klaro': path.join(SRC_DIR, 'klaro.js'),
-        'klaro-no-translations': path.join(SRC_DIR, 'klaro.js'),
+        'klaro-no-translations': path.join(SRC_DIR, 'klaro-no-translations.js'),
         cm: path.join(SRC_DIR, 'consent-manager.js'),
         translations: path.join(SRC_DIR, 'translations.js'),
         ide: path.join(SRC_DIR, 'ide.js')
