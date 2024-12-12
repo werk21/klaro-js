@@ -51,7 +51,7 @@ let config = {
     output: {
         path: BUILD_DIR,
         filename: SEPARATE_CSS ? '[name]-no-css.js' : '[name].js',
-        library: '[name]',
+        library: 'klaro',
         libraryTarget: 'umd',
         publicPath: '',
     },
