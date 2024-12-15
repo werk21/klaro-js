@@ -1,9 +1,7 @@
 {
   "author": "KIProtect GmbH",
   "browserslist": [
-    "> 0.25%",
-    "IE 11",
-    "IE 9"
+    "defaults"
   ],
   "bugs": {
     "url": "https://github.com/KIProtect/klaro/issues"
