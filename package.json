@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "sass": "^1.25.0",
-    "webpack-merge": "^5.10.0"
+    "webpack-merge": "^6.0.1"
   },
   "description": "A simple but powerful consent manager.",
   "devDependencies": {
