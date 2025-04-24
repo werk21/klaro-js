@@ -35,7 +35,7 @@
     "sass-loader": "^16.0.5",
     "style-loader": "^4.0.0",
     "stylelint": "^16.2.1",
-    "stylelint-config-sass-guidelines": "^11.0.0",
+    "stylelint-config-sass-guidelines": "^12.1.0",
     "url-loader": "^4.1.1",
     "webpack": "^5.90.3",
     "webpack-bundle-analyzer": "^4.10.1",
