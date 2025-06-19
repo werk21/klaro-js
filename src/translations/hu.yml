@@ -51,5 +51,5 @@ contextualConsent:
   description: Szeretné betölteni azt a külső tartalmat, amelyet {title} szolgáltat?
   acceptOnce: Igen
   acceptAlways: Mindig
-  descriptionEmptyStore: Amennyiben beleegyezik ebbe a szolgáltatásba, el kell fogadnia a következőket: {title} itt: {link}.
+  descriptionEmptyStore: "Amennyiben beleegyezik ebbe a szolgáltatásba, el kell fogadnia a következőket: {title} itt: {link}."
   modalLinkText: Jóváhagyás kezelő
