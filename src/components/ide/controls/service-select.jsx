@@ -6,20 +6,20 @@ import { getValue } from "../utils/i18n";
 export const ServiceSelect = ({field, services, prefix, config, t, updateConfig}) => {
     const [search, setSearch] = useState('')
     const [updated, setUpdated] = useState(false)
-    
+
     const serviceTitle = service => getValue(service.spec.translations || {}, t.lang, ['title']) || getValue(service.spec.translations || {}, 'zz', ['title'])  || asTitle(service.name)
-    const generateCandidates = services => services.sort((a, b) => serviceTitle(a) > serviceTitle(b) ? 1 : -1).map(service => ({service: service, name: service.name, value: serviceTitle(service)}))
+    const generateCandidates = services => services.sort((a, b) => (serviceTitle(a) > serviceTitle(b) ? 1 : -1)).map(service => ({service: service, name: service.name, value: serviceTitle(service)}))
     const [candidates, setCandidates] = useState(generateCandidates(services))
 
     const searchServices = (query) => {
         if (!query)
             return services
-        let ms = services.filter(service => serviceTitle(service).toLowerCase().includes(query.toLowerCase()))
+        const ms = services.filter(service => serviceTitle(service).toLowerCase().includes(query.toLowerCase()))
         return ms
     }
 
     const updateSearch = (value) => {
-        let candidateServices = generateCandidates(searchServices(value))
+        const candidateServices = generateCandidates(searchServices(value))
         if (value !== '')
             candidateServices.unshift({name: value, service: {
                 spec: {

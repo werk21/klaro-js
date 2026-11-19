@@ -23,12 +23,12 @@ export const JSONConfig =({t, config, updateConfig}) => {
         setMessage()
         setError()
         p.then(text => {
-            try {               
+            try {
                 const json = JSON.parse(text)
                 updateConfig([], json)
                 setMessage(t(["json", "success"]))
             } catch(e) {
-                console.log(e)
+                console.warn(e)
                 setError(t(["json", "invalidJSON"]))
             }
         });

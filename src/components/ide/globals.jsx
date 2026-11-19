@@ -9,7 +9,6 @@ export const Globals = ({ config, disabled, controls, updateConfig, t }) => {
         return (
             <ClassName
                 disabled={disabled}
-                key={globalField.name}
                 updateConfig={updateConfig}
                 config={config}
                 t={t}

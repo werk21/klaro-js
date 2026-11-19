@@ -30,7 +30,7 @@ export class Tabs extends React.Component {
 
 export const Tab = ({ active, children, href, icon, params, onClick }) => (
     <li className={active ? 'cm-tab-is-active' : ''}>
-        <a params={params} onClick={onClick}>
+        <a onClick={onClick}>
             {icon && (
                 <span className="cm-tabs-icon cm-tabs-is-small">{icon}</span>
             )}

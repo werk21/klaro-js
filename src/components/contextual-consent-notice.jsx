@@ -51,15 +51,15 @@ const ContextualConsentNotice = ({manager, style, config, t, lang, service}) => 
             {t(['contextualConsent', 'modalLinkText'])}
         </a>
     )
-    
+
     return <div
-                lang={lang}
-                className={
-                    (stylePrefix || 'klaro') +
+        lang={lang}
+        className={
+            (stylePrefix || 'klaro') +
                     (additionalClass !== undefined ? ' ' + additionalClass : '') + ' cm-as-context-notice'
-                }
-            >
-            <div className={"context-notice"+(style !== undefined ? ` cm-${style}` : "")}>
+        }
+    >
+        <div className={"context-notice"+(style !== undefined ? ` cm-${style}` : "")}>
             <p>
                 {t(['contextualConsent','description'], {title: title})}
             </p>

@@ -1,15 +1,16 @@
 
-@use "sass:map";
-@import './modal';
-@import './vars';
+@use 'sass:map';
+@use 'sass:meta';
+@use 'modal';
+@use 'vars';
 
 .klaro-ide {
 
-    @import './switch';
-    @import './controls';
-    @import './tabs';
-    @import './list';
-    @import './dropdown';
+    @include meta.load-css('switch');
+    @include meta.load-css('controls');
+    @include meta.load-css('tabs');
+    @include meta.load-css('list');
+    @include meta.load-css('dropdown');
 
     label {
         display: inline-block;
@@ -42,35 +43,35 @@
     }
 
     .cm-message {
-        padding: map.get($cm-space, md);
+        padding: map.get(vars.$cm-space, md);
 
         &.cm-error,
         &.cm-success {
-            @include var(border-radius, border-radius);
-            @include var(color, white1);
-            box-shadow: $cm-box-shadow-light-sm;
-            margin-bottom: map.get($cm-space, lg);
+            @include vars.var(border-radius, border-radius);
+            @include vars.var(color, white1);
+            box-shadow: vars.$cm-box-shadow-light-sm;
+            margin-bottom: map.get(vars.$cm-space, lg);
         }
 
         &.cm-error {
-            @include var(background-color, red2);
+            @include vars.var(background-color, red2);
         }
 
         &.cm-success {
-            @include var(background, green2);
+            @include vars.var(background, green2);
         }
     }
 
     .cm-space-sm {
-        margin-bottom: map.get($cm-space, sm) !important;
+        margin-bottom: map.get(vars.$cm-space, sm) !important;
     }
 
     .cm-space-md {
-        margin-bottom: map.get($cm-space, md) !important;
+        margin-bottom: map.get(vars.$cm-space, md) !important;
     }
 
     .cm-space-lg {
-        margin-bottom: map.get($cm-space, lg) !important;
+        margin-bottom: map.get(vars.$cm-space, lg) !important;
     }
 
     .cm-json,
@@ -90,9 +91,9 @@
         }
 
         h1 {
-            @include var(border-style, border-style);
-            @include var(border-width, border-width);
-            @include var(border-color, light2);
+            @include vars.var(border-style, border-style);
+            @include vars.var(border-width, border-width);
+            @include vars.var(border-color, light2);
             text-transform: none;
             margin-bottom: 20px;
             display: inline-block;
@@ -113,38 +114,38 @@
     }
 
     p.cm-section-description {
-        @include var(color, dark2);
+        @include vars.var(color, dark2);
         text-align: justify;
-        margin-top: map.get($cm-space, sm);
-        margin-bottom: map.get($cm-space, lg);
+        margin-top: map.get(vars.$cm-space, sm);
+        margin-bottom: map.get(vars.$cm-space, lg);
     }
 
     .cm-purpose-order {
         ul {
-            margin-top: map.get($cm-space, md);
-            margin-bottom: map.get($cm-space, md);
+            margin-top: map.get(vars.$cm-space, md);
+            margin-bottom: map.get(vars.$cm-space, md);
 
             li {
                 display: flex;
 
                 span.cm-buttons {
-                    @include var(border-radius, border-radius);
+                    @include vars.var(border-radius, border-radius);
                     flex-grow: 0;
-                    box-shadow: $cm-box-shadow-light-sm;
+                    box-shadow: vars.$cm-box-shadow-light-sm;
 
                     a {
-                        padding: map.get($cm-space, md);
+                        padding: map.get(vars.$cm-space, md);
                         display: inline-block;
 
                         &:hover {
-                            @include var(background, green1);
+                            @include vars.var(background, green1);
                         }
                     }
                 }
 
                 span.cm-value {
                     flex-grow: 1;
-                    padding: map.get($cm-space, md);
+                    padding: map.get(vars.$cm-space, md);
                 }
             }
         }
@@ -152,11 +153,11 @@
 
     .cm-translations-fields {
         .cm-translations-for-key {
-            @include var(border-radius, border-radius);
-            @include var(background-color, white1);
-            box-shadow: $cm-box-shadow-light-sm;
-            padding: map.get($cm-space, md);
-            margin-bottom: map.get($cm-space, lg);
+            @include vars.var(border-radius, border-radius);
+            @include vars.var(background-color, white1);
+            box-shadow: vars.$cm-box-shadow-light-sm;
+            padding: map.get(vars.$cm-space, md);
+            margin-bottom: map.get(vars.$cm-space, lg);
 
             li {
                 display: flex;
@@ -184,11 +185,11 @@
             }
 
             .cm-status-is-active {
-                @include var(color, green1);
+                @include vars.var(color, green1);
             }
 
             .cm-status-is-inactive {
-                @include var(color, red1);
+                @include vars.var(color, red1);
             }
         }
 
@@ -209,9 +210,9 @@
     .cm-cookie-config {
         .cm-cookie-forms {
             .cm-cookie-form {
-                @include var(border-bottom-style, border-style);
-                @include var(border-bottom-width, border-width);
-                @include var(border-bottom-color, light2);
+                @include vars.var(border-bottom-style, border-style);
+                @include vars.var(border-bottom-width, border-width);
+                @include vars.var(border-bottom-color, light2);
             }
         }
     }
@@ -221,20 +222,20 @@
             .cm-retracting-label-input {
                 width: auto;
                 flex-grow: 1;
-                margin-right: map.get($cm-space, md);
+                margin-right: map.get(vars.$cm-space, md);
             }
 
             &:first-child {
-                @include var(border-bottom-style, border-style);
-                @include var(border-bottom-width, border-width);
-                @include var(border-bottom-color, light2);
+                @include vars.var(border-bottom-style, border-style);
+                @include vars.var(border-bottom-width, border-width);
+                @include vars.var(border-bottom-color, light2);
             }
         }
     }
 
     .cm-config-controls {
-        margin-top: map.get($cm-space, sm);
-        margin-bottom: map.get($cm-space, lg);
+        margin-top: map.get(vars.$cm-space, sm);
+        margin-bottom: map.get(vars.$cm-space, lg);
         max-width: none;
         display: flex;
         flex-wrap: wrap;
@@ -243,7 +244,7 @@
         justify-content: space-between;
 
         h2 {
-            margin-right: map.get($cm-space, lg);
+            margin-right: map.get(vars.$cm-space, lg);
             display: block;
             flex-grow: 1;
         }
@@ -263,46 +264,46 @@
             }
 
             select {
-                @include var(border-color, green1);
-                @include var(border-radius, border-radius);
-                @include var(border-style, border-style);
-                @include var(border-radius, border-radius);
-                @include var(background-color, white1);
-                padding: map.get($cm-space, md);
-                margin-bottom: map.get($cm-space, md);
+                @include vars.var(border-color, green1);
+                @include vars.var(border-radius, border-radius);
+                @include vars.var(border-style, border-style);
+                @include vars.var(border-radius, border-radius);
+                @include vars.var(background-color, white1);
+                padding: map.get(vars.$cm-space, md);
+                margin-bottom: map.get(vars.$cm-space, md);
                 display: block;
             }
         }
 
         .cm-control-button {
 
-            @include var(border-radius, border-radius);
-            @include var(background-color, blue2);
-            @include var(color, white1);
+            @include vars.var(border-radius, border-radius);
+            @include vars.var(background-color, blue2);
+            @include vars.var(color, white1);
 
             border-style: none;
             padding: 12px;
             margin-top: 4px;
             cursor: pointer;
-            box-shadow: $cm-box-shadow-dark-sm;
+            box-shadow: vars.$cm-box-shadow-dark-sm;
             margin-right: 6px;
 
             &.cm-delete {
-                @include var(background-color, red3);
+                @include vars.var(background-color, red3);
                 float: right;
             }
 
             &.cm-secondary {
-                @include var(background-color, red2);
+                @include vars.var(background-color, red2);
             }
 
             &.cm-success {
-                @include var(background-color, green1);
+                @include vars.var(background-color, green1);
             }
 
             &:disabled {
-                @include var(background-color, light1);
-                @include var(color, dark1);
+                @include vars.var(background-color, light1);
+                @include vars.var(color, dark1);
                 cursor: not-allowed;
             }
         }
@@ -311,7 +312,7 @@
     .cookie-modal {
         .cm-modal {
             &.cm-ide {
-                @include modal(1020px, 1000px);
+                @include modal.modal(1020px, 1000px);
             }
         }
     }

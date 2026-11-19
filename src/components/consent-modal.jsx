@@ -101,7 +101,7 @@ export default class ConsentModal extends React.Component {
         let ppLink;
         if (ppUrl !== undefined)
             ppLink = (
-                <a key="ppLink" href={ppUrl} target="_blank" rel="noopener">
+                <a key="ppLink" href={ppUrl} target="_blank" rel="noopener noreferrer">
                     {t(['privacyPolicy', 'name'])}
                 </a>
             );
@@ -157,7 +157,7 @@ export default class ConsentModal extends React.Component {
                                     config.poweredBy ||
                                     'https://kiprotect.com/klaro'
                                 }
-                                rel="noopener"
+                                rel="noopener noreferrer"
                             >
                                 {t(['poweredBy'])}
                             </a>

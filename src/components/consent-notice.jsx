@@ -176,7 +176,7 @@ export default class ConsentNotice extends React.Component {
         );
 
         const learnMoreLink = () =>
-            noticeAsModal ? (
+            (noticeAsModal ? (
                 <button
                     key="learnMoreLink"
                     className="cm-btn cm-btn-lern-more cm-btn-info"
@@ -194,7 +194,7 @@ export default class ConsentNotice extends React.Component {
                 >
                     {t(['consentNotice', 'learnMore'])}
                 </a>
-            );
+            ));
 
         let ppLink;
 
@@ -231,7 +231,7 @@ export default class ConsentNotice extends React.Component {
                 aria-labelledby="id-cookie-title"
                 id="klaro-cookie-notice"
                 tabIndex="0"
-                autofocus={config.autoFocus}
+                autoFocus={config.autoFocus}
                 ref={(div) => {
                     this.noticeRef = div;
                 }}

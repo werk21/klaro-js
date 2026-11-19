@@ -1,20 +1,20 @@
 
-@use "sass:map";
-@import './vars';
+@use 'sass:map';
+@use 'vars';
 
 .cm-language-select,
 .cm-theme-select,
 .cm-purpose-select {
 
-    @include var(border-radius, border-radius);
-    @include var(background-color, white1);
-    @include var(border-style, border-style);
-    @include var(border-width, border-width);
-    @include var(border-color, light2);
+    @include vars.var(border-radius, border-radius);
+    @include vars.var(background-color, white1);
+    @include vars.var(border-style, border-style);
+    @include vars.var(border-width, border-width);
+    @include vars.var(border-color, light2);
 
-    box-shadow: $cm-box-shadow-light-sm;
-    padding: map.get($cm-space, md);
-    margin-bottom: map.get($cm-space, md);
+    box-shadow: vars.$cm-box-shadow-light-sm;
+    padding: map.get(vars.$cm-space, md);
+    margin-bottom: map.get(vars.$cm-space, md);
 
     ul.cm-languages,
     ul.cm-themes,
@@ -22,12 +22,12 @@
         margin-top: -4px;
 
         li {
-            @include var(color, light1);
-            @include var(border-radius, border-radius);
-            @include var(border-width, border-width);
-            @include var(border-style, border-style);
-            @include var(border-color, green2);
-            @include var(background-color, green1);
+            @include vars.var(color, light1);
+            @include vars.var(border-radius, border-radius);
+            @include vars.var(border-width, border-width);
+            @include vars.var(border-style, border-style);
+            @include vars.var(border-color, green2);
+            @include vars.var(background-color, green1);
 
             display: inline-block;
             margin-right: 4px;
@@ -36,7 +36,7 @@
             font-size: 0.9em;
 
             a {
-                @include var(color, white1);
+                @include vars.var(color, white1);
             }
         }
     }
@@ -44,8 +44,8 @@
 
 .cm-search-select {
 
-    margin-top: map.get($cm-space, md);
-    margin-bottom: map.get($cm-space, md);
+    margin-top: map.get(vars.$cm-space, md);
+    margin-bottom: map.get(vars.$cm-space, md);
     display: flex;
 
     input:not(:focus) ~ .cm-candidates {
@@ -58,11 +58,11 @@
 
     .cm-candidates {
 
-        @include var(background-color, white1);
-        @include var(border-radius, border-radius);
-        @include var(border-width, border-width);
-        @include var(border-style, border-style);
-        @include var(border-color, white2);
+        @include vars.var(background-color, white1);
+        @include vars.var(border-radius, border-radius);
+        @include vars.var(border-width, border-width);
+        @include vars.var(border-style, border-style);
+        @include vars.var(border-color, white2);
 
         position: absolute;
         top: 55px;
@@ -72,14 +72,14 @@
         width: 100%;
 
         .cm-candidate {
-            @include var(border-bottom-width, border-width);
-            @include var(border-bottom-style, border-style);
-            @include var(border-bottom-color, dark3);
-            padding: map.get($cm-space, md);
+            @include vars.var(border-bottom-width, border-width);
+            @include vars.var(border-bottom-style, border-style);
+            @include vars.var(border-bottom-color, dark3);
+            padding: map.get(vars.$cm-space, md);
             cursor: pointer;
 
             p {
-                @include var(color, dark2);
+                @include vars.var(color, dark2);
                 font-size: 0.9em;
             }
 
@@ -99,7 +99,7 @@
     height: 40px;
     overflow: visible;
 
-    @media (min-width: $cm-tablet) {
+    @media (min-width: vars.$cm-tablet) {
         width: 300px;
     }
 
@@ -117,7 +117,7 @@
 
     ul {
 
-        @include var(background-color, white1);
+        @include vars.var(background-color, white1);
 
         top: 0;
         left: 0;
@@ -130,12 +130,12 @@
 
         li {
 
-            @include var(background-color, white1);
-            @include var(border-bottom-style, border-style);
-            @include var(border-bottom-width, border-width);
-            @include var(border-bottom-color, white2);
+            @include vars.var(background-color, white1);
+            @include vars.var(border-bottom-style, border-style);
+            @include vars.var(border-bottom-width, border-width);
+            @include vars.var(border-bottom-color, white2);
 
-            box-shadow: $cm-box-shadow-dark-sm;
+            box-shadow: vars.$cm-box-shadow-dark-sm;
             margin: 0;
             width: auto;
             display: none;
@@ -147,7 +147,7 @@
             }
 
             &.cm-obj-is-active {
-                @include var(background-color, light2);
+                @include vars.var(background-color, light2);
                 display: flex;
                 order: 1;
             }
@@ -166,11 +166,11 @@
             order: 3;
 
             input {
-                @include var(color, dark1);
-                @include var(border-color, dark2);
-                @include var(border-radius, border-radius);
-                @include var(border-style, border-style);
-                @include var(border-width, border-width);
+                @include vars.var(color, dark1);
+                @include vars.var(border-color, dark2);
+                @include vars.var(border-radius, border-radius);
+                @include vars.var(border-style, border-style);
+                @include vars.var(border-width, border-width);
                 flex-grow: 1;
                 flex-shrink: 1;
                 padding: 4px;
@@ -178,9 +178,9 @@
             }
 
             a.cm-btn {
-                @include var(color, white1);
-                @include var(border-radius, border-radius);
-                @include var(background-color, dark3);
+                @include vars.var(color, white1);
+                @include vars.var(border-radius, border-radius);
+                @include vars.var(background-color, dark3);
                 padding: 8px;
                 flex-grow: 0;
                 flex-shrink: 0;
@@ -192,7 +192,7 @@
 
         &:not(.cm-is-active) {
             li.cm-obj-is-active {
-                @include var(background-color, white1);
+                @include vars.var(background-color, white1);
             }
         }
 
@@ -211,7 +211,7 @@
 }
 
 p.cm-description {
-    @include var(color, dark2);
+    @include vars.var(color, dark2);
     font-size: 0.9em;
     padding-top: 2px;
     margin-bottom: 4px;
@@ -222,11 +222,11 @@ p.cm-description {
 
     select {
 
-        @include var(background-color, white1);
-        @include var(color, dark2);
-        @include var(border-radius, border-radius);
-        @include var(border-style, border-style);
-        @include var(border-color, white2);
+        @include vars.var(background-color, white1);
+        @include vars.var(color, dark2);
+        @include vars.var(border-radius, border-radius);
+        @include vars.var(border-style, border-style);
+        @include vars.var(border-color, white2);
 
         display: block;
         width: 100%;
@@ -235,7 +235,7 @@ p.cm-description {
         text-indent: 5px;
 
         &[disabled] {
-            @include var(background-color, light2);
+            @include vars.var(background-color, light2);
         }
 
     }
@@ -249,11 +249,11 @@ p.cm-description {
     margin-top: 4px;
 
     > .cm-label {
-        @include var(background-color, white1);
-        @include var(border-radius, border-radius);
-        @include var(border-style, border-style);
-        @include var(border-width, border-width);
-        @include var(border-color, light2);
+        @include vars.var(background-color, white1);
+        @include vars.var(border-radius, border-radius);
+        @include vars.var(border-style, border-style);
+        @include vars.var(border-width, border-width);
+        @include vars.var(border-color, light2);
         position: absolute;
         top: 16px;
         left: 8px;
@@ -280,11 +280,11 @@ p.cm-description {
 
 .cm-input {
 
-    @include var(border-radius, border-radius);
-    @include var(background-color, light1);
-    @include var(border-style, border-style);
-    @include var(border-width, border-width);
-    @include var(border-color, green1);
+    @include vars.var(border-radius, border-radius);
+    @include vars.var(background-color, light1);
+    @include vars.var(border-style, border-style);
+    @include vars.var(border-width, border-width);
+    @include vars.var(border-color, green1);
 
     // For some reason, textarea tries to use a system font.
     font-size: 0.9em;
@@ -294,6 +294,6 @@ p.cm-description {
     width: 100%;
 
     &[disabled] {
-        @include var(background-color, light2);
+        @include vars.var(background-color, light2);
     }
 }

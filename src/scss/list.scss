@@ -1,18 +1,18 @@
-@use "sass:map";
-@import './vars';
+@use 'sass:map';
+@use 'vars';
 
 .cm-list {
     .cm-item {
         display: flex;
         flex-direction: row;
         align-items: center;
-        padding: map.get($cm-space, sm);
+        padding: map.get(vars.$cm-space, sm);
         display: flex;
         flex-direction: row;
         align-items: top;
         justify-items: flex-end;
 
-        @media (min-width: $cm-tablet) {
+        @media (min-width: vars.$cm-tablet) {
             span.cm-is-action {
                 display: none;
             }
@@ -29,20 +29,20 @@
         }
 
         &:nth-child(2n) {
-            @include var(background-color, light1);
+            @include vars.var(background-color, light1);
         }
 
         &.cm-is-header {
             font-weight: 600;
-            margin-bottom: map.get($cm-space, xs);
+            margin-bottom: map.get(vars.$cm-space, xs);
             background: none;
         }
 
         &.cm-is-card {
-            @include var(background-color, white1);
-            @include var(border-radius, border-radius);
-            box-shadow: $cm-box-shadow-dark-sm;
-            margin-bottom: map.get($cm-space, lg);
+            @include vars.var(background-color, white1);
+            @include vars.var(border-radius, border-radius);
+            box-shadow: vars.$cm-box-shadow-dark-sm;
+            margin-bottom: map.get(vars.$cm-space, lg);
         }
 
         &.cm-is-clickable {
@@ -70,7 +70,7 @@
         .cm-col {
             align-content: center;
             flex-basis: 0;
-            margin: map.get($cm-space, sm);
+            margin: map.get(vars.$cm-space, sm);
             flex-grow: 1;
 
             &.cm-is-xs {

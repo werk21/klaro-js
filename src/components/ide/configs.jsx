@@ -14,14 +14,14 @@ export const ConfigItem = ({t, config, onConfigAction, onClick}) => <ListItem on
             {
                 false &&
                 <MenuItem onClick={() => onConfigAction(config, 'delete')}>
-                     {t(['configs', 'delete'])}
+                    {t(['configs', 'delete'])}
                 </MenuItem>
             }
             <MenuItem onClick={() => onConfigAction(config, 'activate')}>
-                 {t(['configs', 'activate'])}
+                {t(['configs', 'activate'])}
             </MenuItem>
             <MenuItem onClick={() => onConfigAction(config, 'deactivate')}>
-                 {t(['configs', 'deactivate'])}
+                {t(['configs', 'deactivate'])}
             </MenuItem>
         </DropdownMenu>
     </ListColumn>

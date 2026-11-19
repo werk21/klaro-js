@@ -11,7 +11,7 @@ export const Input = ({ value, onChange, ...props }) => (
 );
 
 export const BaseRetractingLabelInput = ({name, children, className, value, label, description, onChange, ...props}) => (
-        <div
+    <div
         className={
             'cm-retracting-label-input' + (className ? ' ' + className : '')
         }
@@ -47,11 +47,7 @@ export const RetractingLabelInput = ({
     className,
     updateConfig,
     ...props
-}) => <BaseRetractingLabelInput description={t(['fields', ...(prefix || []), field.name, 'description'])} value={config[field.name] || ''} label={t(['fields', ...(prefix || []), field.name, 'label'])} {...props} className={className} name={field.name} onChange={(value) => updateConfig([field.name], value)} children={children} />;
-
-RetractingLabelInput.propTypes = {
-    className: '',
-};
+}) => <BaseRetractingLabelInput description={t(['fields', ...(prefix || []), field.name, 'description'])} value={config[field.name] || ''} label={t(['fields', ...(prefix || []), field.name, 'label'])} {...props} className={className} name={field.name} onChange={(value) => updateConfig([field.name], value)}>{children}</BaseRetractingLabelInput>;
 
 RetractingLabelInput.propTypes = {
     /* Class name to apply on the input */

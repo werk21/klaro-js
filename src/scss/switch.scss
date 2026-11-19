@@ -1,9 +1,11 @@
+@use 'vars';
+
 /* The switch - the box around the slider */
 
 .cm-switch-container {
-    @include var(border-bottom-style, border-style);
-    @include var(border-bottom-width, border-width);
-    @include var(border-bottom-color, light2);
+    @include vars.var(border-bottom-style, border-style);
+    @include vars.var(border-bottom-width, border-width);
+    @include vars.var(border-bottom-color, light2);
 
     display: block;
     position: relative;
@@ -34,11 +36,11 @@
 }
 
 .cm-list-input:checked + .cm-list-label .slider {
-    @include var(background-color, green1);
+    @include vars.var(background-color, green1);
 }
 
 .cm-list-input.half-checked:checked + .cm-list-label .slider {
-    @include var(background-color, green1);
+    @include vars.var(background-color, green1);
     opacity: 0.6;
 
     &::before {
@@ -49,7 +51,7 @@
 }
 
 .cm-list-input.only-required + .cm-list-label .slider {
-    @include var(background-color, green2);
+    @include vars.var(background-color, green2);
     opacity: 0.8;
 
     &::before {
@@ -60,13 +62,13 @@
 }
 
 .cm-list-input.required:checked + .cm-list-label .slider {
-    @include var(background-color, green2);
+    @include vars.var(background-color, green2);
     opacity: 0.8;
     cursor: not-allowed;
 }
 
 .slider {
-    box-shadow: $cm-box-shadow-dark-md;
+    box-shadow: vars.$cm-box-shadow-dark-md;
 }
 
 .cm-list-input {
@@ -84,7 +86,7 @@
 }
 
 .cm-list-description {
-    @include var(color, dark3);
+    @include vars.var(color, dark3);
     font-size: 0.9em;
     padding-top: 4px;
 }
@@ -99,7 +101,7 @@
 
     .slider {
 
-        @include var(background-color, white2);
+        @include vars.var(background-color, white2);
 
         position: absolute;
         cursor: pointer;
@@ -115,7 +117,7 @@
 
     .slider::before {
 
-        @include var(background-color, white3);
+        @include vars.var(background-color, white3);
 
         position: absolute;
         content: '';
@@ -137,7 +139,7 @@
     }
 
     input:focus + .slider {
-        @include var(box-shadow-color, green3);
+        @include vars.var(box-shadow-color, green3);
         box-shadow: 0 0 1px var(--box-shadow-color, green3);
     }
 

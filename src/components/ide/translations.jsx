@@ -47,7 +47,7 @@ export const ServiceTranslations = ({t, config, updateConfig}) => {
         updateConfig(['services', service._id, 'translations', language, 'description'], value)
     }
     const updateTitle = (service, language, value) => {
-        updateConfig(['services', service._id, 'translations', language, 'title'], value)        
+        updateConfig(['services', service._id, 'translations', language, 'title'], value)
     }
     const serviceTranslations = config.services.map(service => <React.Fragment key={service.name}>
         <h3>{service.name}</h3>
@@ -83,16 +83,16 @@ export const PurposeTranslations = ({t, config, updateConfig}) => {
     const purposes = new Set()
     config.services.forEach(service => service.purposes.forEach(purpose => purposes.add(purpose)))
     const updateDescription = (purpose, language, value) => {
-        updateConfig(['translations', language, 'purposes', purpose, 'description'], value)        
+        updateConfig(['translations', language, 'purposes', purpose, 'description'], value)
     }
     const updateTitle = (purpose, language, value) => {
-        updateConfig(['translations', language, 'purposes', purpose, 'title'], value)        
+        updateConfig(['translations', language, 'purposes', purpose, 'title'], value)
     }
     const purposeTranslations = Array.from(purposes.keys()).map(purpose => <React.Fragment key={purpose}>
         <h3>{purpose}</h3>
         <TranslationsForKey
             t={t}
-            onChange={(language, value) => updateTitle(purpose, language, value)} 
+            onChange={(language, value) => updateTitle(purpose, language, value)}
             translationKey={['purposes', purpose, 'title']}
             hintKey={['purposes', 'title']}
             name={purpose}
@@ -119,7 +119,7 @@ export const PurposeTranslations = ({t, config, updateConfig}) => {
 
 export const PrivacyPolicyUrlTranslations = ({t, config, updateConfig}) => {
     const updateUrl = (language, value) => {
-        updateConfig(['translations', language, 'privacyPolicyUrl'], value)        
+        updateConfig(['translations', language, 'privacyPolicyUrl'], value)
     }
     return <TranslationsForKey
         t={t}
@@ -160,7 +160,7 @@ export const UITranslations = ({t, config, updateConfig}) => {
                     translations={config.translations}
                     languages={config.languages} />
             }
-             items.push(<div key={key.join(".")} className="cm-key-translations">
+            items.push(<div key={key.join(".")} className="cm-key-translations">
                 {content}
             </div>)
         }

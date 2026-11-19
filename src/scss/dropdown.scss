@@ -1,4 +1,6 @@
-@use "sass:map";
+@use 'vars';
+
+@use 'sass:map';
 
 .cm-dropdown {
     position: relative;
@@ -18,19 +20,19 @@
 
         &:focus,
         &:hover {
-            @include var(background-color, light1);
+            @include vars.var(background-color, light1);
             border-radius: 25px;
         }
     }
 
     > .cm-dropdowncontent {
-        @include var(background-color, white1);
+        @include vars.var(background-color, white1);
         display: none;
-        box-shadow: $cm-box-shadow-dark-sm;
+        box-shadow: vars.$cm-box-shadow-dark-sm;
         width: auto;
 
         &.cm-dropdownexpanded {
-            @include var(border-radius, border-radius);
+            @include vars.var(border-radius, border-radius);
             display: block;
             position: absolute;
             top: 35px;
@@ -40,10 +42,10 @@
 
         ul.cm-dropdownmenu {
 
-            @include var(border-radius, border-radius);
-            @include var(border-style, border-style);
-            @include var(border-width, border-width);
-            @include var(border-color, dark2);
+            @include vars.var(border-radius, border-radius);
+            @include vars.var(border-style, border-style);
+            @include vars.var(border-width, border-width);
+            @include vars.var(border-color, dark2);
 
             list-style: none;
             text-align: left;
@@ -57,7 +59,7 @@
 
                 a {
                     display: block;
-                    padding: map.get($cm-space, sm);
+                    padding: map.get(vars.$cm-space, sm);
                     padding-left: 16px;
 
                     span {
@@ -70,8 +72,8 @@
                     }
 
                     &:hover {
-                        @include var(background-color, blue1);
-                        @include var(color, white1);
+                        @include vars.var(background-color, blue1);
+                        @include vars.var(color, white1);
                     }
                 }
             }

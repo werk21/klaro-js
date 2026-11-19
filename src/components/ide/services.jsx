@@ -11,7 +11,7 @@ export const ServiceItem = ({t, service, onClick, updateConfig}) => <ListItem on
     <ListColumn size="icon">
         <DropdownMenu>
             <MenuItem onClick={() => updateConfig(['services', service._id], null)}>
-                 {t(['services', 'delete'])}
+                {t(['services', 'delete'])}
             </MenuItem>
         </DropdownMenu>
     </ListColumn>
@@ -20,7 +20,7 @@ export const ServiceItem = ({t, service, onClick, updateConfig}) => <ListItem on
 export const ServiceList = ({ t, config, disabled, onClick, updateConfig }) => {
     const services = config.services.map(service => <ServiceItem key={service._id} updateConfig={updateConfig} onClick={onClick} t={t} service={service} />)
     return <React.Fragment>
-        { services.length > 0 && 
+        { services.length > 0 &&
         <List className="cm-service-list">
             <ListHeader>
                 <ListColumn size="md">
@@ -61,7 +61,6 @@ export const ServiceConfig = ({ service, setState, updateServiceName, disabled, 
                 updateConfig={updateServiceConfig}
                 config={service}
                 t={t}
-                key={serviceField.name}
                 field={serviceField}
                 {...(serviceField.controlProps || {})}
             />

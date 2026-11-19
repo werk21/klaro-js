@@ -34,7 +34,7 @@ function getTranslations(config){
 }
 
 export const Demo = ({t: ttt, config}) => {
-    const [show, setShow] = useState(0) 
+    const [show, setShow] = useState(0)
     const [siteUrl, setSiteUrl] = useState('')
     const [lang, setLang] = useState(config.languages.length > 0 ? config.languages[0] : 'en')
     const [testStore, setTestStore] = useState(new TestStore())
@@ -59,10 +59,10 @@ export const Demo = ({t: ttt, config}) => {
         </p>
         <form onSubmit={testOnSite}>
             <div className="cm-config-controls">
-                    <BaseRetractingLabelInput value={siteUrl} onChange={setSiteUrl} label={ttt(['demo','testOnSite', 'label'])}/>
-                    <button className="cm-control-button cm-success" onClick={(e) => {e.preventDefault();testOnSite()}}>
-                        {ttt(['demo', 'testOnSite', 'button'])}
-                    </button>
+                <BaseRetractingLabelInput value={siteUrl} onChange={setSiteUrl} label={ttt(['demo','testOnSite', 'label'])}/>
+                <button className="cm-control-button cm-success" onClick={(e) => {e.preventDefault();testOnSite()}}>
+                    {ttt(['demo', 'testOnSite', 'button'])}
+                </button>
             </div>
         </form>
         <div className="cm-config-controls">
