@@ -1,4 +1,3 @@
-const exp = require('constants');
 const path = require('path');
 const BUILD_DIR = path.resolve(__dirname, 'dist');
 const SRC_DIR = path.resolve(__dirname, 'src');
@@ -26,11 +25,17 @@ let config = {
     module: {
         rules: [
             {
+                // Webpack 5 asset modules replace the deprecated url-loader/file-loader.
                 test: /\.(png|woff|woff2|eot|ttf|svg)$/,
-                use: 'url-loader?limit=100000',
+                type: 'asset',
+                parser: {
+                    dataUrlCondition: {
+                        maxSize: 100 * 1024, // 100 KiB, same limit as the old url-loader
+                    },
+                },
             },
             {
-                test: /\.yaml|yml$/,
+                test: /\.(yaml|yml)$/,
                 use: ['yaml-loader'],
             },
             {
@@ -90,7 +95,7 @@ if (SEPARATE_CSS) {
             {
                 loader: 'sass-loader',
                 options: {
-                    implementation: require.resolve("sass"),
+                    implementation: require("sass"),
                     sassOptions: {
                         sourceMap: APP_ENV === 'development',
                         outputStyle: NO_MINIFY_CSS ? 'expanded' : 'compressed',
@@ -127,7 +132,7 @@ if (SEPARATE_CSS) {
             {
                 loader: 'sass-loader',
                 options: {
-                    implementation: require.resolve("sass"),
+                    implementation: require("sass"),
                 },
             },
         ],

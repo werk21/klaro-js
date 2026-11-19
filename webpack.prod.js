@@ -7,10 +7,6 @@ module.exports = {
         minimize: true,
     },
     plugins: [
-        new webpack.LoaderOptionsPlugin({
-            minimize: true,
-            debug: false,
-        }),
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify('production'),
             VERSION: JSON.stringify(
