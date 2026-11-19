@@ -2,17 +2,13 @@
 /* eslint-env node */
 module.exports = {
     presets: [
-        [
-            '@babel/preset-env',
-            {
-                useBuiltIns: 'usage',
-                corejs: 3,
-            },
-        ],
+        '@babel/preset-env',
         '@babel/preset-react',
     ],
     plugins: [
-        '@babel/plugin-proposal-class-properties',
-        '@babel/plugin-proposal-object-rest-spread',
+        // Babel 8 moved the old preset-env `useBuiltIns: 'usage'` + `corejs: 3`
+        // options into a standalone plugin. `method: 'usage-pure'` matches the
+        // old usage-based injection without polluting the global scope.
+        ['babel-plugin-polyfill-corejs3', { method: 'usage-pure' }],
     ],
 };
